@@ -30,6 +30,10 @@ import Layout from '@/layout'
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+
+/**
+ * Layout 整体布局，左边菜单栏，右边contain children子路由，用于填充contain
+*/
 export const constantRoutes = [
   {
     path: '/login',

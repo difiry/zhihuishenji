@@ -11,13 +11,13 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 const whiteList = ['/login'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
-  // start progress bar
+  // start progress bar 进度条插件
   NProgress.start()
 
-  // set page title
+  // set page title  动态设置标签
   document.title = getPageTitle(to.meta.title)
 
-  // determine whether the user has logged in
+  // determine whether the user has logged in  从cookie中获取登录信息
   const hasToken = getToken()
 
   if (hasToken) {
