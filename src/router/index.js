@@ -55,10 +55,179 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '首页', icon: 'dashboard' }
     }]
   },
 
+  {
+    path: '/example',
+    component: Layout,
+    redirect: '/example/form',
+    name: 'Example',
+    meta: { title: '审计管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审计立项', icon: 'form' }
+      },
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '审计抽样', icon: 'table' }
+      },
+      {
+        path: 'form1',
+        name: 'Form1',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审计确认', icon: 'form' }
+      },
+      {
+        path: 'form2',
+        name: 'Form2',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审计报告征求意见', icon: 'form' }
+      },
+      {
+        path: 'form3',
+        name: 'Form3',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审计报告', icon: 'form' }
+      },
+      {
+        path: 'form4',
+        name: 'Form4',
+        component: () => import('@/views/form/index'),
+        meta: { title: '后续审计', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/example2',
+    component: Layout,
+    redirect: '/example2/form',
+    name: 'Example2',
+    meta: { title: '自助分析', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '自助分析', icon: 'form' }
+      },
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '模型查询', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/example3',
+    component: Layout,
+    redirect: '/example3/table',
+    name: 'Example3',
+    meta: { title: '审计可视化', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '风险热力图', icon: 'table' }
+      },
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '内控评价', icon: 'form' }
+      },
+      {
+        path: 'form2',
+        name: 'Form2',
+        component: () => import('@/views/form/index'),
+        meta: { title: '员工画像', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/example4',
+    component: Layout,
+    redirect: '/example4/table',
+    name: 'Example4',
+    meta: { title: '远程监督', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '风险预警', icon: 'table' }
+      },
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '发现问题查询', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/example5',
+    component: Layout,
+    redirect: '/example5/table',
+    name: 'Example5',
+    meta: { title: '审计数仓', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '审计问题信息库', icon: 'table' }
+      },
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审计档案', icon: 'form' }
+      },
+      {
+        path: 'form1',
+        name: 'Form1',
+        component: () => import('@/views/form/index'),
+        meta: { title: '外部信息', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/example6',
+    component: Layout,
+    redirect: '/example6/table',
+    name: 'Example6',
+    meta: { title: '审计工具', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'table',
+        name: 'Table',
+        component: () => import('@/views/table/index'),
+        meta: { title: '审计共享云盘', icon: 'table' }
+      },
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '审模型需求', icon: 'form' }
+      },
+      {
+        path: 'tree',
+        name: 'Tree',
+        component: () => import('@/views/tree/index'),
+        meta: { title: '通讯录', icon: 'tree' }
+      }
+    ]
+  },
+  /*
   {
     path: '/example',
     component: Layout,
@@ -163,7 +332,7 @@ export const constantRoutes = [
       }
     ]
   },
-
+*/
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
