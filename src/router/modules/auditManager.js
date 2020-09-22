@@ -23,9 +23,29 @@ const tableRouter = {
     },
     {
       path: 'auditConfirm',
-      name: 'AuditConfirm',
-      component: () => import('@/views/auditConfirm/index'),
-      meta: { title: '审计确认', icon: 'form' }
+      component: () => import('@/views/auditConfirm/index'), // Parent router-view
+      name: 'auditConfirm',
+      meta: { title: '审计确认',icon: 'form' },
+      children: [
+        {
+          path: 'action',
+          component: () => import('@/views/auditConfirm/action'),
+          name: 'action',
+          meta: { title: '流程处理' }
+        },
+        {
+          path: 'list',
+          component: () => import('@/views/table/index'),
+          name: 'list',
+          meta: { title: '结果查询' }
+        },
+        {
+          path: 'upload',
+          component: () => import('@/views/form/index'),
+          name: 'upload',
+          meta: { title: '数据补录' }
+        }
+      ]
     },
     {
       path: 'form2',
