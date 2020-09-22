@@ -6,6 +6,7 @@ Vue.use(Router)
 /* Layout */
 import Layout from '@/layout'
 
+
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -60,10 +61,10 @@ export const constantRoutes = [
   },
 
   {
-    path: '/example',
+    path: '/auditManager',
     component: Layout,
-    redirect: '/example/form',
-    name: 'Example',
+    redirect: '/auditManager/form',
+    name: 'AuditManager',
     meta: { title: '审计管理', icon: 'el-icon-s-help' },
     children: [
       {
@@ -79,9 +80,9 @@ export const constantRoutes = [
         meta: { title: '审计抽样', icon: 'table' }
       },
       {
-        path: 'form1',
-        name: 'Form1',
-        component: () => import('@/views/form/index'),
+        path: 'auditConfirm',
+        name: 'AuditConfirm',
+        component: () => import('@/views/auditConfirm/index'),
         meta: { title: '审计确认', icon: 'form' }
       },
       {
@@ -115,7 +116,13 @@ export const constantRoutes = [
         path: 'form',
         name: 'Form',
         component: () => import('@/views/form/index'),
-        meta: { title: '自助分析', icon: 'form' }
+        meta: { title: '审计部', icon: 'form' }
+      },
+      {
+        path: 'form',
+        name: 'Form',
+        component: () => import('@/views/form/index'),
+        meta: { title: '村镇银行', icon: 'form' }
       },
       {
         path: 'table',
@@ -227,7 +234,7 @@ export const constantRoutes = [
       }
     ]
   },
-  /*
+  
   {
     path: '/example',
     component: Layout,
@@ -332,7 +339,7 @@ export const constantRoutes = [
       }
     ]
   },
-*/
+
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
