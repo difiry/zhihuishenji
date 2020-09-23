@@ -35,37 +35,40 @@
       style="width: 100%;"
       @sort-change="sortChange"
     >
-      <el-table-column label="序号" prop="id" sortable="custom" align="center" width="80" :class-name="getSortClass('id')">
+      <el-table-column label="序号" prop="id" sortable="custom" align="center" width="60" :class-name="getSortClass('id')">
         <template slot-scope="{row}">
           <span>{{ row.id }}</span>
         </template>
       </el-table-column>
       <el-table-column label="选择" width="50px" align="center" type="selection"  @selection-change="changeFun">
-       
+      </el-table-column>
+      <el-table-column label="日期" width="80px" align="center">
+        <template slot-scope="{row}">
+          <span>20200923</span>
+        </template>
       </el-table-column>
       <el-table-column label="模型" width="110px" align="center">
         <template slot-scope="{row}">
           <span>贷款XXXX模型1</span>
         </template>
       </el-table-column>
-      <el-table-column label="客户号" width="150px" align="center">
+      <el-table-column label="审计事实描述"  align="center">
+        <template slot-scope="{row}">
+          <span>***</span>
+        </template>
+      </el-table-column>
+      <el-table-column label="责任人" width="100px" align="center">
         <template slot-scope="{row}">
           <span>{{ row.timestamp | parseTime('{y}-{m}-{d} {h}:{i}') }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="姓名" min-width="150px"  align="center">
-        <template slot-scope="{row}">
-          <span class="link-type" @click="handleUpdate(row)">{{ row.title }}</span>
-          <el-tag>{{ row.type | typeFilter }}</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column label="状态" width="110px" align="center">
+      <el-table-column label="状态" width="80px" align="center">
         <template slot-scope="{row}">
           <span>待确认</span>
         </template>
       </el-table-column>
      
-      <el-table-column label="操作" align="center" width="230" class-name="small-padding fixed-width">
+      <el-table-column label="操作" align="center" width="150px" class-name="small-padding fixed-width">
         <template slot-scope="{row,$index}">
           <el-button type="primary" size="mini" @click="handleUpdate(row)">
            确认
