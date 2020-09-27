@@ -63,19 +63,19 @@ export const constantRoutes = [
   {
     path: '/example2',
     component: Layout,
-    redirect: '/example2/form',
+    redirect: '/example2/mb1',
     name: 'Example2',
     meta: { title: '自助分析', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'form',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
+        path: 'mb1',
+        name: 'mb1',
+        component: () => import('@/views/selfAnalysis/Mb1'),
         meta: { title: '审计部', icon: 'form' }
       },
       {
-        path: 'form',
-        name: 'Form',
+        path: 'form1',
+        name: 'Form1',
         component: () => import('@/views/form/index'),
         meta: { title: '村镇银行', icon: 'form' }
       },
